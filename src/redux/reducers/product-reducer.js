@@ -18,7 +18,7 @@ const product = createSlice({
         add: (state,action)=>{
             const idf = state.products.find((item)=> item.id === action.payload.id);
             if(!idf){
-                return {...state,products:[...state.products,{...action.payload,userCount:1,userPrice:action.payload.price}]}
+                return {...state,products:[...state.products,{...action.payload, userCount:1,userPrice:action.payload.price}]}
             }
             return state;
         },
@@ -26,6 +26,7 @@ const product = createSlice({
             return {...state,products:state.products.filter((item)=> item.id !== action.payload.id),}
         },
         toggleAmount: (state,action)=>{
+            console.log(action.payload);
             if(action.payload.type === "add"){
                 const newProducts = state.products.map((item)=>{
                     if(item.id === action.payload.id){

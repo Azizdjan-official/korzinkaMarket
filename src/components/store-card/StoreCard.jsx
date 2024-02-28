@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { toggleAmount, remove } from '../../redux/reducers/product-reducer'
 
 
-const StoreCard = ({id,title,description,userPrice,image, userCount,count,rate}) => {
+const StoreCard = ({id,title,userPrice,image, userCount,count,rate}) => {
   const dispatch = useDispatch();
   const [showBtn, setShowBtn] = useState(false)
   
